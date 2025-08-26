@@ -1,0 +1,90 @@
+{
+  "hero": {
+    "headline": "The marketplace that sells for you",
+    "subhead": "Thrifts uses AI to optimize listings, bundle items, and match buyers and sellers in real-time. Native to M-Pesa and built for fashion & everyday goods.",
+    "primaryCta": "Get started free"
+  },
+  "aiIntro": {
+    "heading": "AI Agents that work for you",
+    "subtext": "Smart pricing, automated listings, and AI-powered discovery help you focus on growth while our tools optimize sales.",
+    "inlinePartnersLinkLabel": "Learn how we scale supply \u2192"
+  },
+  "howItWorksMerchants": [
+    {
+      "title": "Create your shop",
+      "desc": "Upload inventory or list items from your phone. Our AI drafts titles, tags, and great photos."
+    },
+    {
+      "title": "Let AI optimize",
+      "desc": "We test prices, bundle items, and promote the right listings to the right buyers."
+    },
+    {
+      "title": "Get paid your way",
+      "desc": "Seamless checkout with M-Pesa and cards. Escrow and delivery tracking keep everyone safe."
+    }
+  ],
+  "sellerTools": [
+    "Real-time inventory",
+    "Light analytics (top sellers, views)",
+    "Shop pages & branding",
+    "Easy refunds & order updates"
+  ],
+  "testimonials": [
+    {
+      "quote": "AI listing tools save me hours daily. Sales up 40% since joining as their automated pricing really works.",
+      "name": "James Mwangi",
+      "role": "Merchant, Nairobi"
+    },
+    {
+      "quote": "Found exactly what I needed at a great price. The local pickup option through pickupmtaani was super convenient.",
+      "name": "Sarah Ochieng",
+      "role": "Shopper, Mombasa"
+    },
+    {
+      "quote": "Quality secondhand tech at fair prices. Love that I can see seller ratings and verified product conditions.",
+      "name": "Michael Kamau",
+      "role": "Shopper, Nakuru"
+    }
+  ],
+  "featuredCarousel": {
+    "sectionTitle": "Featured finds",
+    "items": [
+      {
+        "title": "MacBook Pro",
+        "category": "Electronics",
+        "price": "KSh 75,000",
+        "condition": "Like New"
+      },
+      {
+        "title": "Nike Air",
+        "category": "Fashion",
+        "price": "KSh 4,500",
+        "condition": "Good"
+      },
+      {
+        "title": "IKEA Desk",
+        "category": "Home",
+        "price": "KSh 8,900",
+        "condition": "Good"
+      }
+    ]
+  },
+  "faq": [
+    {
+      "q": "Is Thrifts free to start?",
+      "a": "Yes \u2014 we offer a free plan for early merchants. You can upgrade as you scale."
+    },
+    {
+      "q": "How do payouts work?",
+      "a": "We support M-Pesa and card payouts. Funds are released from escrow after delivery confirmation."
+    },
+    {
+      "q": "Do I need my own website?",
+      "a": "Nope. Thrifts gives you a hosted storefront and discovery in the marketplace."
+    },
+    {
+      "q": "What categories are supported?",
+      "a": "We\u2019re focused on fashion first (clothes, shoes, accessories), with more on the way."
+    }
+  ]
+}

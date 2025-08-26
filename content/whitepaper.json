@@ -1,0 +1,34 @@
+{
+  "meta": {
+    "title": "Thrifts White Paper",
+    "description": "Product thesis, model, and roadmap for Thrifts.",
+    "lastUpdated": "2025-08-21"
+  },
+  "sections": [
+    {
+      "h2": "Problem",
+      "p": "The secondhand market in Africa faces three key challenges: fragmented supply, trust barriers, and logistics friction. Sellers struggle with manual listing processes while buyers lack confidence in product condition and fulfillment reliability. Traditional platforms haven't solved these core issues."
+    },
+    {
+      "h2": "Opportunity",
+      "p": "A $12B addressable market exists in East Africa alone for authenticated secondhand goods. Mobile-first consumers and widespread M-Pesa adoption create perfect conditions for a trusted marketplace with AI-powered listing tools and verified local pickup options."
+    },
+    {
+      "h2": "Product & AI Agents",
+      "p": "Our AI agents handle the heavy lifting: Smart Pricing analyzes market data for optimal pricing, while our Title & Description Builder generates SEO-optimized listings from photos. Photo Check validates image quality and authenticity. The Listing Optimizer continuously refines based on performance data. Auto Re-pricing adjusts to market conditions, and our Fulfillment Helper coordinates with pickupmtaani for reliable local delivery."
+    },
+    {
+      "h2": "Go-to-Market",
+      "p": "We're focused on acquiring and retaining quality merchants through AI-powered tools that dramatically reduce listing friction. Our partnership with pickupmtaani enables trusted fulfillment. Social proof and buyer protection build marketplace confidence."
+    },
+    {
+      "h2": "Unit Economics",
+      "p": "10% take rate with 85% gross margin. AI reduces support costs while increasing listing quality and conversion. Merchant retention >75% after month 2. Average order value KSh 12,000 with 3.2% monthly growth. Platform contribution margin positive after 18 months."
+    },
+    {
+      "h2": "Roadmap (12–18 months)",
+      "p": "Q3-Q4 2025: Enhanced AI agents, bulk listing tools, automated authenticity checks. Q1-Q2 2026: Expanded logistics network, shop performance analytics, mobile app launch. Q3-Q4 2026: Cross-border trade pilot, B2B wholesale features, predictive inventory suggestions."
+    }
+  ],
+  "downloadCta": "Download white paper (PDF)"
+}

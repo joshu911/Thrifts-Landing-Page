@@ -1,0 +1,46 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --brand: 24 91% 53%;
+    --interactive: 217 91% 60%;
+    --danger: 8 68% 51%;
+    --bg: 0 0% 94%;
+    --bg-secondary: 0 0% 100%;
+    --text: 0 0% 0%;
+    --text-muted: 217 19% 27%;
+  }
+
+  .dark {
+    --bg: 211 24% 13%;
+    --bg-secondary: 212 24% 8%;
+    --text: 0 0% 100%;
+    --text-muted: 220 9% 46%;
+  }
+}
+
+@layer base {
+  body {
+    @apply bg-bg text-text antialiased;
+  }
+
+  .focus-ring {
+    @apply focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-interactive;
+  }
+}
+
+@layer components {
+  .btn-brand {
+    @apply bg-brand text-white px-6 py-3 rounded-xl font-medium hover:brightness-110 transition-all duration-200 focus-ring;
+  }
+
+  .btn-outline {
+    @apply border-2 border-text px-6 py-3 rounded-xl font-medium hover:bg-text hover:text-bg transition-all duration-200 focus-ring;
+  }
+
+  .card {
+    @apply bg-bgSecondary rounded-2xl shadow-custom p-6;
+  }
+}

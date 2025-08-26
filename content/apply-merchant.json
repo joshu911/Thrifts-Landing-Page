@@ -1,0 +1,63 @@
+{
+  "hero": {
+    "title": "Become a Merchant Partner",
+    "subtitle": "Join Kenya's smartest secondhand marketplace. Get AI tools for faster listing, automated pricing, and seamless M-Pesa payouts."
+  },
+  "eligibility": [
+    "Active shop or inventory on hand",
+    "Clear photos and accurate descriptions",
+    "Can fulfill via delivery or pickup"
+  ],
+  "form": {
+    "fields": [
+      {
+        "id": "name",
+        "label": "Full name",
+        "placeholder": "e.g., Amina N.",
+        "help": "Your legal or trading name."
+      },
+      {
+        "id": "email",
+        "label": "Email",
+        "placeholder": "name@shop.com",
+        "help": "For application updates."
+      },
+      {
+        "id": "shopUrl",
+        "label": "Shop URL or handle",
+        "placeholder": "https://... or @handle",
+        "help": "Your site or social shop."
+      },
+      {
+        "id": "gmv",
+        "label": "Monthly GMV",
+        "type": "select",
+        "options": ["< KSh 100k", "KSh 100k–500k", "KSh 500k–2M", "> KSh 2M"]
+      },
+      {
+        "id": "categories",
+        "label": "Primary categories",
+        "placeholder": "Electronics, Fashion, Home",
+        "help": "Comma-separated."
+      },
+      {
+        "id": "fulfillment",
+        "label": "Fulfillment",
+        "type": "checkboxes",
+        "options": ["Courier delivery", "Local pickup (pickupmtaani)"]
+      },
+      {
+        "id": "message",
+        "label": "Tell us about your shop",
+        "type": "textarea",
+        "placeholder": "A few lines on products and goals."
+      }
+    ],
+    "submitLabel": "Apply now",
+    "privacyNote": "We'll only use this info to review your application."
+  },
+  "success": {
+    "title": "Application received",
+    "body": "Thanks for applying! We'll review your details and respond within 48 hours. Meanwhile, prepare your inventory for quick listing."
+  }
+}

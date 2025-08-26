@@ -1,0 +1,43 @@
+{
+  "name": "thrifts_landing_page",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "npm run whitepaper && next build",
+    "start": "next start",
+    "lint": "next lint",
+    "format": "prettier --write .",
+    "whitepaper": "ts-node scripts/create-whitepaper.ts"
+  },
+  "dependencies": {
+    "@radix-ui/react-accordion": "^1.1.2",
+    "@radix-ui/react-dialog": "^1.0.5",
+    "@radix-ui/react-tabs": "^1.1.13",
+    "@types/node": "^20.8.2",
+    "@types/react": "^18.2.24",
+    "@types/react-dom": "^18.2.8",
+    "class-variance-authority": "^0.7.0",
+    "clsx": "^2.0.0",
+    "framer-motion": "^11.0.0",
+    "lucide-react": "^0.284.0",
+    "next": "^14.2.0",
+    "next-themes": "^0.2.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "tailwind-merge": "^1.14.0",
+    "tailwindcss-animate": "^1.0.7",
+    "typescript": "^5.2.2"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^6.7.4",
+    "@typescript-eslint/parser": "^6.7.4",
+    "autoprefixer": "^10.4.21",
+    "eslint": "^8.50.0",
+    "eslint-config-next": "13.5.4",
+    "postcss": "^8.5.6",
+    "prettier": "^3.0.3",
+    "tailwindcss": "^3.4.17",
+    "ts-node": "^10.9.1"
+  }
+}

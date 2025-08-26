@@ -1,0 +1,95 @@
+{
+  "hero": {
+    "title": "Partners at Thrifts",
+    "subtitle": "Join us in building Africa's leading AI-powered secondhand marketplace. We're scaling supply, trust, and local logistics."
+  },
+  "tabs": [
+    {
+      "id": "merchant",
+      "label": "Merchant Investors",
+      "intro": "Top merchants can align growth with equity. Get early access to new features and shape our roadmap while building long-term value.",
+      "kpiBullets": [
+        "Supply growth: +85% QoQ",
+        "Repeat sellers: 78% (M+2)",
+        "Pickup SLA: 92% on-time"
+      ],
+      "form": {
+        "title": "Register interest",
+        "fields": [
+          {
+            "id": "name",
+            "label": "Full name",
+            "placeholder": "e.g., Amina N."
+          },
+          {
+            "id": "email",
+            "label": "Email",
+            "placeholder": "name@shop.com"
+          },
+          {
+            "id": "shopUrl",
+            "label": "Shop URL",
+            "placeholder": "https://..."
+          },
+          {
+            "id": "gmv",
+            "label": "Monthly GMV",
+            "type": "select",
+            "options": ["< KSh 100k", "KSh 100k–500k", "KSh 500k–2M", "> KSh 2M"]
+          },
+          {
+            "id": "message",
+            "label": "Message",
+            "type": "textarea",
+            "placeholder": "Tell us what you're looking for."
+          }
+        ],
+        "submitLabel": "Request a brief"
+      }
+    },
+    {
+      "id": "external",
+      "label": "External Investors",
+      "intro": "We're selectively engaging angels and institutions who align with our mission of making quality goods accessible while reducing waste.",
+      "thesisBullets": [
+        "Fragmented supply needs AI listing compression",
+        "Trusted logistics boosts liquidity",
+        "Local payments (M-Pesa) reduce friction"
+      ],
+      "form": {
+        "title": "Request materials",
+        "fields": [
+          {
+            "id": "name",
+            "label": "Full name",
+            "placeholder": "e.g., David K."
+          },
+          {
+            "id": "email",
+            "label": "Email",
+            "placeholder": "name@fund.com"
+          },
+          {
+            "id": "org",
+            "label": "Organization/Fund",
+            "placeholder": "e.g., Acme Capital"
+          },
+          {
+            "id": "checkSize",
+            "label": "Check size",
+            "type": "select",
+            "options": ["KSh 1–5M", "KSh 5–25M", "KSh 25–100M", "> KSh 100M"]
+          },
+          {
+            "id": "message",
+            "label": "Message",
+            "type": "textarea",
+            "placeholder": "Timeline, areas of interest."
+          }
+        ],
+        "submitLabel": "Book a call"
+      }
+    }
+  ],
+  "complianceNote": "For informational purposes only—this is not an offer to sell or a solicitation to buy any securities."
+}
