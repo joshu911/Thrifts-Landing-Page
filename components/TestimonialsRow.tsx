@@ -1,21 +1,19 @@
-'use client';
+"use client";
 
-import { motion } from 'framer-motion';
-import { Quote } from 'lucide-react';
+import { motion } from "framer-motion";
+import { Quote } from "lucide-react";
 
 interface Testimonial {
   quote: string;
   name: string;
-  role: string;
+  role?: string;
 }
 
 interface TestimonialsRowProps {
   testimonials: Testimonial[];
 }
 
-export default function TestimonialsRow({
-  testimonials,
-}: TestimonialsRowProps) {
+export default function TestimonialsRow({ testimonials }: TestimonialsRowProps) {
   return (
     <section className="py-16 px-4 sm:px-6 lg:px-8 bg-bgSecondary">
       <div className="max-w-7xl mx-auto">
@@ -29,25 +27,26 @@ export default function TestimonialsRow({
         </motion.h2>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {testimonials.map((testimonial, index) => (
-            <motion.div
-              key={testimonial.name}
+          {testimonials.map((t, index) => (
+            <motion.figure
+              key={`${t.name}-${index}`}
               className="card"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
             >
-              <Quote className="w-8 h-8 text-brand mb-4" />
+              <Quote className="w-8 h-8 text-brand mb-4" aria-hidden="true" />
               <blockquote className="mb-6">
+                {/* Use <q> to render typographic quotes without raw " characters in JSX */}
                 <p className="text-lg font-medium italic">
-                  "{testimonial.quote}"
+                  <q>{t.quote}</q>
                 </p>
               </blockquote>
-              <footer>
-                <p className="font-semibold">{testimonial.name}</p>
-                <p className="text-sm text-textMuted">{testimonial.role}</p>
-              </footer>
-            </motion.div>
+              <figcaption>
+                <p className="font-semibold">{t.name}</p>
+                {t.role && <p className="text-sm text-textMuted">{t.role}</p>}
+              </figcaption>
+            </motion.figure>
           ))}
         </div>
       </div>

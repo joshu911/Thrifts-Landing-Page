@@ -1,21 +1,22 @@
 "use client";
 
-import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
+import { motion } from "framer-motion";
+import { Card, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Sparkles, Package, ShieldCheck, LineChart, Check } from "lucide-react";
+import { Sparkles, Package, ShieldCheck, LineChart } from "lucide-react";
 import landingContent from "@/content/landing.json";
 import Link from "next/link";
-import {
-  trackAiAgentOpened,
-  trackPartnersLinkInlineClicked,
-} from "@/lib/analytics";
+import { trackPartnersLinkFooterClicked } from "@/lib/analytics";
+
+// Narrow the JSON shape we need (no `any`)
+type AiIntro = {
+  heading?: string;
+  subtext?: string;
+  inlinePartnersLinkLabel?: string;
+};
+type LandingContent = { aiIntro?: AiIntro };
 
 export default function AiAgents() {
-  const [activeDemo, setActiveDemo] = useState<string | null>(null);
-
   // 4 core modules from the white paper
   const agents = [
     {
@@ -24,7 +25,6 @@ export default function AiAgents() {
       icon: LineChart,
       description:
         "AI writes titles & tags, suggests prices, and runs built-in A/B tests.",
-      
     },
     {
       id: "bundling",
@@ -32,7 +32,6 @@ export default function AiAgents() {
       icon: Package,
       description:
         "Create frequently-bought-together and outfit bundles with seller rules.",
-      
     },
     {
       id: "discovery",
@@ -40,7 +39,6 @@ export default function AiAgents() {
       icon: Sparkles,
       description:
         "Taste-based recommendations and a live matching engine for shoppers.",
-      
     },
     {
       id: "trust",
@@ -48,26 +46,19 @@ export default function AiAgents() {
       icon: ShieldCheck,
       description:
         "Moderation, payment escrow, and verified merchants & reviews.",
-      
     },
   ];
 
-  const heading =
-    (landingContent as any)?.aiIntro?.heading ?? "AI modules that do the work";
+  const aiIntro = (landingContent as LandingContent).aiIntro ?? {};
+  const heading = aiIntro.heading ?? "AI modules that do the work";
   const subtext =
-    (landingContent as any)?.aiIntro?.subtext ??
+    aiIntro.subtext ??
     "Four models power discovery, bundling, listings, and trust—so selling feels effortless.";
   const inlinePartnersLinkLabel =
-    (landingContent as any)?.aiIntro?.inlinePartnersLinkLabel ??
-    "See partner opportunities →";
-
-  const handleDemoClick = (agentId: string) => {
-    trackAiAgentOpened("merchant");
-    setActiveDemo((prev) => (prev === agentId ? null : agentId));
-  };
+    aiIntro.inlinePartnersLinkLabel ?? "See partner opportunities →";
 
   const handlePartnersLinkClick = () => {
-    trackPartnersLinkInlineClicked();
+    trackPartnersLinkFooterClicked();
   };
 
   return (
@@ -100,7 +91,6 @@ export default function AiAgents() {
         <div className="grid md:grid-cols-2 gap-6">
           {agents.map((agent, i) => {
             const Icon = agent.icon;
-            const isActive = activeDemo === agent.id;
 
             return (
               <motion.div
@@ -128,8 +118,6 @@ export default function AiAgents() {
                       {agent.description}
                     </p>
                   </CardHeader>
-
-                  
                 </Card>
               </motion.div>
             );
