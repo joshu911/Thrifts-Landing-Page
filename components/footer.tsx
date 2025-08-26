@@ -25,7 +25,7 @@ export default function Footer() {
             <ul className="space-y-2">
               <li>
                 <Link
-                  href="/explore"
+                  href="/404"
                   className="text-textMuted hover:text-text transition-colors"
                 >
                   Explore

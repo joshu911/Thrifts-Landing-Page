@@ -2,8 +2,6 @@ import { Metadata } from 'next';
 import SocialProof from '@/components/SocialProof';
 import PersonaSplit from '@/components/PersonaSplit';
 import landingContent from '@/content/landing.json';
-// import QuickStatsRow from "@/components/QuickStatsRow";
-// import HeroMerchant from '@/components/HeroMerchant';
 import TrustRow from '@/components/TrustRow';
 import HowItWorks from '@/components/how-it-works';
 import AiAgents from '@/components/AiAgents';
