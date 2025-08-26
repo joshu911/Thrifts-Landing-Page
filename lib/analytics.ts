@@ -6,9 +6,9 @@ type AiAction = string
 type PartnersTab = 'merchant' | 'external'
 type LeadType = 'merchant' | 'external'
 
-export const trackLandingViewed = () => {
-  console.debug('[Analytics] Landing page viewed')
-}
+// export const trackLandingViewed = () => {
+//   console.debug('[Analytics] Landing page viewed')
+// }
 
 export const trackMerchantApplyClicked = () => {
   console.debug('[Analytics] Merchant apply CTA clicked')
@@ -26,9 +26,9 @@ export const trackAiSuggestionClicked = (segment: AiAgentSegment, action: AiActi
   console.debug(`[Analytics] AI suggestion clicked`, { segment, action })
 }
 
-export const trackPartnersLinkInlineClicked = () => {
-  console.debug('[Analytics] Partners inline link clicked')
-}
+// export const trackPartnersLinkInlineClicked = () => {
+//   console.debug('[Analytics] Partners inline link clicked')
+// }
 
 export const trackPartnersLinkFooterClicked = () => {
   console.debug('[Analytics] Partners footer link clicked')
