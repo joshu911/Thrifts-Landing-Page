@@ -1,11 +1,15 @@
-import fs from 'fs';
-import path from 'path';
-import { execSync } from 'child_process';
+// scripts/create-whitepaper.ts
 
-const whitepaper = fs.readFileSync('content/whitepaper.json', 'utf-8');
+// Use CommonJS requires so ts-node (in CJS mode) won’t error
+const fs = require("fs");
+const path = require("path");
+const { execSync } = require("child_process");
+
+// Load whitepaper JSON
+const whitepaper = fs.readFileSync("content/whitepaper.json", "utf-8");
 const { meta, sections } = JSON.parse(whitepaper);
 
-// Create whitepaper page
+// Build the whitepaper page content
 const whitepaperPage = `import { Metadata } from 'next';
 import Link from 'next/link';
 import whitepaperContent from '@/content/whitepaper.json';
@@ -50,16 +54,22 @@ export default function Whitepaper() {
       </article>
     </main>
   );
-}`;
+}
+`;
 
-// Create whitepaper route directory
-const routePath = path.join('app', 'whitepaper');
+// Ensure the route directory exists
+const routePath = path.join("app", "whitepaper");
 if (!fs.existsSync(routePath)) {
   fs.mkdirSync(routePath, { recursive: true });
 }
 
-// Write page component
-fs.writeFileSync(path.join(routePath, 'page.tsx'), whitepaperPage);
+// Write the generated page
+fs.writeFileSync(path.join(routePath, "page.tsx"), whitepaperPage);
 
 // Format with Prettier
-execSync('npx prettier --write "app/whitepaper/page.tsx"');
+try {
+  execSync('npx prettier --write "app/whitepaper/page.tsx"', { stdio: "inherit" });
+  console.log("✅ Whitepaper page generated and formatted.");
+} catch (err) {
+  console.error("⚠️ Prettier formatting failed:", err);
+}

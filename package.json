@@ -8,7 +8,7 @@
     "start": "next start",
     "lint": "next lint",
     "format": "prettier --write .",
-    "whitepaper": "ts-node scripts/create-whitepaper.ts"
+    "whitepaper": "ts-node --transpile-only scripts/create-whitepaper.ts"
   },
   "dependencies": {
     "@radix-ui/react-accordion": "^1.2.12",
