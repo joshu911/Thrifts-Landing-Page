@@ -1,13 +1,12 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import {  Sparkles, } from "lucide-react";
 
 export default function ThriftsLandingPage() {
-  const [open, setOpen] = useState(false);
 
   return (
     <div className=" bg-gradient-to-b from-white via-[#fafafa] to-white text-slate-900">
@@ -29,7 +28,7 @@ export default function ThriftsLandingPage() {
               Native to mobile money (hello, M-Pesa) and built for fashion and everyday goods.
             </p>
             <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3">
-              <Button size="lg" className="rounded-2xl px-8 border border-orange-500 text-orange-500" onClick={() => setOpen(true)}>
+              <Button size="lg" className="rounded-2xl px-8 border border-orange-500 text-orange-500">
                 <Sparkles className="mr-2 h-4 w-4 " /> Get started free
               </Button>
               <a href="/featured" className="text-slate-700 hover:text-slate-900 text-sm">Explore featured shops →</a>

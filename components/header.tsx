@@ -1,64 +1,58 @@
-'use client';
+"use client";
 
-import Link from 'next/link';
-import { Button } from '@/components/ui/button';
+import Link from "next/link";
+import Image from "next/image";
+import { Button } from "@/components/ui/button";
 
 type HeaderProps = {
   brandName?: string;
   logoLetter?: string;
-  /** If provided, clicking the CTA will call this handler instead of navigating */
   onPrimaryCta?: () => void;
-  /** Fallback href if onPrimaryCta is not provided */
   ctaHref?: string;
   ctaText?: string;
-  /** Show bottom border (default: true) */
   showBorder?: boolean;
 };
 
 const NAV_LINKS = [
-  { href: '/features', label: 'Features' },
-  { href: '/how', label: 'How it works' },
-  { href: '/whitepaper', label: 'Whitepaper' },
-  { href: '#faq', label: 'FAQ' },
+  { href: "/features", label: "Features" },
+  { href: "/how", label: "How it works" },
+  { href: "/whitepaper", label: "Whitepaper" },
+  { href: "#faq", label: "FAQ" },
 ];
 
 export default function Header({
-  brandName = 'Thrifts',
+  brandName = "Thrifts",
   onPrimaryCta,
-  ctaHref = '/signup?role=seller',
-  ctaText = 'Get started free',
+  ctaHref = "/signup?role=seller",
+  ctaText = "Get started free",
   showBorder = true,
 }: HeaderProps) {
   return (
     <header
       className={[
-        'sticky top-0 z-40 w-full bg-white/70 backdrop-blur supports-[backdrop-filter]:bg-white/60',
-        showBorder ? 'border-b border-slate-200' : '',
-      ].join(' ')}
+        "sticky top-0 z-40 w-full bg-white/70 backdrop-blur supports-[backdrop-filter]:bg-white/60",
+        showBorder ? "border-b border-slate-200" : "",
+      ].join(" ")}
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex h-16 items-center justify-between">
         {/* Brand */}
-        <Link
-          href="/"
-          className="flex items-center gap-2"
-          aria-label={brandName}
-        >
-          <img src="/logo.png" alt="Logo" className="h-12 w-28 object-cover" />
+        <Link href="/" className="flex items-center gap-2" aria-label={brandName}>
+          <Image
+            src="/logo.png"              // put your logo in /public/logo.png
+            alt={`${brandName} logo`}
+            width={112}                  // matches w-28 (7rem)
+            height={48}                  // matches h-12 (3rem)
+            priority                     // helps LCP for above-the-fold logo
+            className="h-12 w-28 object-cover"
+          />
         </Link>
 
         {/* Desktop nav */}
-        <nav
-          className="hidden md:flex items-center gap-6 text-sm"
-          aria-label="Main navigation"
-        >
+        <nav className="hidden md:flex items-center gap-6 text-sm" aria-label="Main navigation">
           {NAV_LINKS.map((item) => (
-            <a
-              key={item.href}
-              href={item.href}
-              className="hover:text-slate-600"
-            >
+            <Link key={item.href} href={item.href} className="hover:text-slate-600">
               {item.label}
-            </a>
+            </Link>
           ))}
         </nav>
 

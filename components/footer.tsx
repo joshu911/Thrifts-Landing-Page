@@ -14,7 +14,7 @@ export default function Footer() {
           <div className="col-span-1 md:col-span-2">
             <h3 className="font-bold text-lg mb-4">Thrifts</h3>
             <p className="text-textMuted max-w-xs">
-              Africa's AI-powered  marketplace. List faster, sell
+              Africa&apos;s AI-powered  marketplace. List faster, sell
               smarter.
             </p>
           </div>

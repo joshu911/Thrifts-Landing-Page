@@ -1,20 +1,31 @@
-import type { Metadata } from "next"
-import { Card, CardContent } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
-import { Download, ArrowLeft } from "lucide-react"
-import Link from "next/link"
-import whitepaperContent from "@/content/whitepaper.json"
+// app/whitepaper/page.tsx
+import type { Metadata } from "next";
+import Link from "next/link";
+import { Download, ArrowLeft, ExternalLink } from "lucide-react";
+import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 
 export const metadata: Metadata = {
-  title: "Thrifts White Paper - Product Thesis and Roadmap",
+  title: "Thrifts White Paper – Product Thesis & Roadmap",
   description:
-    "Comprehensive overview of Thrifts marketplace strategy, AI technology, and growth roadmap for Africa's secondhand economy.",
-}
+    "Comprehensive overview of Thrifts’ AI-first marketplace strategy, technology, and growth roadmap.",
+  alternates: { canonical: "/whitepaper" },
+  openGraph: {
+    title: "Thrifts White Paper – Product Thesis & Roadmap",
+    description:
+      "Comprehensive overview of Thrifts’ AI-first marketplace strategy, technology, and growth roadmap.",
+    type: "article",
+    url: "/whitepaper",
+  },
+};
 
 export default function WhitepaperPage() {
+  const pdfPath = "/whitepaper.pdf"; // place the file in /public/whitepaper.pdf
+
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-gray-900 py-20 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-4xl mx-auto">
+    <main className="min-h-screen bg-gray-50 dark:bg-gray-900 py-20 px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto w-full max-w-5xl">
+        {/* Back link */}
         <div className="mb-8">
           <Link
             href="/company/partners"
@@ -25,53 +36,64 @@ export default function WhitepaperPage() {
           </Link>
         </div>
 
-        <div className="text-center mb-12">
-          <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-4">
-            {whitepaperContent.meta.title}
+        {/* Header */}
+        <div className="text-center mb-6">
+          <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white">
+            Thrifts White Paper
           </h1>
-          <p className="text-xl text-gray-600 dark:text-gray-300 mb-6">{whitepaperContent.meta.description}</p>
-          <div className="flex items-center justify-center gap-4 text-sm text-gray-500 dark:text-gray-400">
-            <span>Last updated: {whitepaperContent.meta.lastUpdated}</span>
-          </div>
+          <p className="mt-2 text-gray-600 dark:text-gray-300">
+            Product thesis, technology framework, and growth roadmap.
+          </p>
         </div>
 
-        <div className="mb-8">
-          <Card className="bg-white dark:bg-gray-800 border-0 shadow-lg rounded-2xl">
-            <CardContent className="p-8 text-center">
-              <div className="w-16 h-16 bg-orange-100 dark:bg-orange-900/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Download className="h-8 w-8 text-orange-500" />
+        {/* Actions */}
+        <div className="mb-6 flex items-center justify-center gap-3">
+          <Button asChild size="lg" className="rounded-xl bg-orange-500 hover:bg-orange-600 text-white">
+            <a href={pdfPath} download="Thrifts-Whitepaper.pdf">
+              <Download className="h-4 w-4 mr-2" />
+              Download PDF
+            </a>
+          </Button>
+          <Button asChild variant="outline" size="lg" className="rounded-xl">
+            <a href={pdfPath} target="_blank" rel="noopener noreferrer">
+              <ExternalLink className="h-4 w-4 mr-2" />
+              Open in new tab
+            </a>
+          </Button>
+        </div>
+
+        {/* Embedded viewer (with graceful fallback) */}
+        <Card className="bg-white dark:bg-gray-800 border-0 shadow-lg rounded-2xl">
+          <CardContent className="p-0">
+            {/* Try <iframe> first for broad support */}
+            <div className="h-[80vh] w-full overflow-hidden rounded-2xl">
+              <iframe
+                src={`${pdfPath}#toolbar=1&navpanes=0&view=FitH`}
+                title="Thrifts White Paper PDF"
+                className="h-full w-full"
+              />
+            </div>
+
+            {/* Fallback for browsers that block iframes for PDFs */}
+            <noscript>
+              <div className="p-6 text-center">
+                <p className="text-sm text-gray-600">
+                  PDF preview unavailable without JavaScript.{" "}
+                  <a className="underline" href={pdfPath}>
+                    Download the PDF
+                  </a>
+                  .
+                </p>
               </div>
-              <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
-                {whitepaperContent.downloadCta}
-              </h3>
-              <p className="text-gray-600 dark:text-gray-300 mb-6">
-                Complete analysis including financial projections and technical architecture
-              </p>
-              <Button
-                asChild
-                size="lg"
-                className="bg-orange-500 hover:bg-orange-600 text-white font-semibold px-8 py-3 rounded-xl"
-              >
-                <a href="/whitepaper.pdf" target="_blank" rel="noopener noreferrer">
-                  <Download className="h-4 w-4 mr-2" />
-                  Download PDF
-                </a>
-              </Button>
-            </CardContent>
-          </Card>
-        </div>
+            </noscript>
+          </CardContent>
+        </Card>
 
-        <div className="space-y-8">
-          {whitepaperContent.sections.map((section, index) => (
-            <Card key={index} className="bg-white dark:bg-gray-800 border-0 shadow-sm rounded-2xl">
-              <CardContent className="p-8">
-                <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">{section.h2}</h2>
-                <p className="text-gray-600 dark:text-gray-300 leading-relaxed">{section.p}</p>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
+        {/* Small note */}
+        <p className="mt-4 text-center text-xs text-gray-500 dark:text-gray-400">
+          Can’t see the preview? Your browser may block embedded PDFs—use “Open in new tab” or “Download”.
+        </p>
       </div>
-    </div>
-  )
+    </main>
+  );
 }
